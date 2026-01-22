@@ -1,0 +1,41 @@
+Bitcoin Price Alert
+ ->To run this, you will need the requests library. You can install it via terminal using: pip install requests
+
+🚀 Features
+Real-time Tracking: Fetches live market data for Bitcoin (and other assets).
+Automated Alerts: Notifies the user via console (or email) when a price threshold is crossed.
+Error Handling: Robust API request management to handle network dips or rate limiting.
+Customizable: Easily change the asset, currency, or check frequency.
+
+🛠️ Installation
+1. Clone the repository:
+-> git clone https://github.com/yourusername/crypto-price-tracker.git cd crypto-price-tracker
+2. Install dependencies: This project requires the requests library.
+-> pip install requests
+
+📖 Usage
+1. Open main.py (or your script name).
+2. Update the my_target variable to your desired alert price.
+3. Run the script:
+  python main.py
+
+🏗️ Architecture
+The project follows a simple Request-Response cycle:
+Input: User defines a target price.
+Process: Script polls the CoinGecko API every 30 seconds.
+Logic: Comparison operator checks if Current Price <= Target Price.
+Output: Alert triggered in the terminal.
+
+🧪 Future Improvements
+[ ] Add support for SMS notifications via Twilio.
+[ ] Implement a GUI using Tkinter or PyQt.
+[ ] Track multiple coins simultaneously using a config file.
+[ ] Export price history to a PostgreSQL database for trend analysis.
+
+How it Works
+ ->The API Request: The script sends a "GET" request to a URL. The server responds with a JSON object (a dictionary in Python).
+ ->The Loop: The while True loop keeps the script running indefinitely.
+ ->The Wait Time: time.sleep(30) is crucial; if you ping a server too many times per second, they will block your IP address.
+
+
+
